@@ -1,0 +1,3 @@
+[submodule "submodules/fuzzy-match"]
+	path = submodules/fuzzy-match
+	url = git@github.com:niklas-timpe/fuzzy-match.git
