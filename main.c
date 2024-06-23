@@ -13,19 +13,19 @@ const char *DATABASE = "/.tty_cheatsheet";
 
 enum mode { TOTAL, TOPIC };
 
-WINDOW *create_newwin(int height, int width, int starty, int startx);
-WINDOW *create_newwin_boxless(int height, int width, int starty, int startx);
-void destroy_win(WINDOW *local_win);
-void update_search_windows(WINDOW *search_win, WINDOW *search_bar, enum mode mode, char *user_input, size_t idx_cursor);
-size_t max(size_t a, size_t b);
+WINDOW *create_newwin(int, int, int, int );
+WINDOW *create_newwin_boxless(int, int, int, int);
+char *get_full_db_path(const char*);
+int file_exists(char*);
+int print_search(WINDOW*, enum mode*);
+size_t max(size_t, size_t);
+void create_db(char*);
+void destroy_win(WINDOW*);
 void draw_floppy(void);
-int file_exists(char *fname);
-void create_db(char *fname);
-char *get_full_db_path(const char *fname);
+void erase_win_keep_box(WINDOW*);
 void init(void);
 void ncurses_setup(void);
-void erase_win_keep_box(WINDOW *local_win);
-int print_search(WINDOW *search_bar, enum mode* mode);
+void update_search_windows(WINDOW*, WINDOW*, enum mode, char*, size_t);
 
 const char entire_search[] = "Total Search: ";
 const char topic_search[] = "Topic Search: ";
